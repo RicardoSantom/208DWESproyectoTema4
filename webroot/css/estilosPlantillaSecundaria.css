@@ -1,0 +1,181 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 31 oct 2022, 5:14:00
+    Author     : Richard
+*/
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    min-width: 290px;
+}
+body{
+    background-color: #fbfaf8;
+    
+}
+main{
+    padding-bottom: 3em;}
+article{
+    width: 99%;
+    margin-left: 5px;
+}
+header{
+    height: 6em;
+    position: sticky;
+    top: 0px;
+}
+h1{
+    text-align: center;
+    /*background-color: #AFBACC;*/
+    color: #516D99;
+    line-height: 1.95em;
+    /*background con verde a derecha*/
+    /*background: linear-gradient(90deg, rgba(118, 196, 244, 0.15) 0%, rgba(64, 116, 234, 0.15) 19.07%, 
+        rgba(113, 79, 188, 0.15) 34.6%, rgba(216, 82, 56, 0.15) 50.14%, rgba(224, 129, 68, 0.15) 65.67%,rgba(238,197,94,0.15)80.93%, rgba(78, 180, 147, 0.15) 100%);*/
+    /*background sin verde a la derecha*/
+    background: linear-gradient(90deg, rgba(118, 196, 244, 0.15) 0%, rgba(64, 116, 234, 0.15) 19.07%, 
+        rgba(113, 79, 188, 0.15) 34.6%, rgba(216, 82, 56, 0.15) 50.14%, rgba(224, 129, 68, 0.15) 65.67%, rgba(78, 180, 147, 0.15) 100%);
+}
+h2{
+    text-align: center;
+    /*background-color: #CCB3AF;*/
+    color: #516D99;
+    line-height: 1.55em;
+    background: linear-gradient(90deg, rgba(255, 201, 181,0.5)0%,rgba(255, 201, 181,0.5)30%,rgba(118, 196, 244, 0.15) 100%);
+}
+h3{
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    color: #00006A;
+}
+h4,h5{
+    margin: 1em 0 1em 1em;
+    color: #00006A;
+    text-decoration: underline solid  #00006A;
+}
+p{
+    margin-left: 2em;
+}
+hr {
+    background-color: transparent;
+    margin-bottom: 4px!important;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top: 3px solid #FFC9B5;
+    display: block;
+    height: 1px;
+    line-height: 19px;
+    margin-bottom: 14px;
+    margin-top: 15px;
+    width: 90%;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: #516D99;
+    margin-top: 0.5em;
+}
+caption{
+    padding-bottom: 20px;
+    font-size: x-large;
+    font-weight: bold;
+    color: #00006a;
+    font-variant-caps: all-small-caps;
+}
+thead td,th{
+    color: #00006A;
+    font-variant-caps: all-small-caps;
+    font-size: larger;
+}
+td:first-child{
+    text-align: justify;
+    text-indent: 2%;
+    line-height: 2em;
+}
+td,th{
+    border: 2px #666666 solid;
+    height: 2em;
+    font-weight: bold;
+}
+td a{
+    color: #666666;
+}
+td a:hover{
+    color: #666666;
+     color: #FFC9B5;
+}
+#github,#linkedin,#curriculum{
+    text-decoration: none;
+}
+#github:before{
+    font-family: 'Fontawesome';
+    content:'\f09b';
+    background-color:#FFC9B5;
+    font-size: 2em;
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin:before{
+    color: #FFC9B5;
+    font-family: 'FontaWesome';
+    content: '\f08c';
+    font-size: 2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#curriculum:before{
+    color: #FFC9B5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin{
+    color: #FFC9B5;
+}
+#curriculum span{
+    color: #FFC9B5;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 0.75em;
+}
+#github,#linkedin{
+    padding-left: 2em;
+    padding-top: 10px;
+}
+#github,#linkedin,#curriculum{padding-bottom: 10px;}
+footer p{
+    padding-top: 15px;}
+footer{
+    min-height: 50px;
+    max-height: 150px;
+    position:fixed;
+    display: flex;
+    float: left;
+    bottom: 0;
+    width: 100%;
+    min-width: 290px;
+    margin-top:10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #516D99;
+    z-index: 2;
+    justify-content: center;
+    color:#F5FEFF;
+    background: rgb(2,0,40);
+background: linear-gradient(90deg, rgba(2,0,40,1) 0%, rgba(81,109,153,1) 100%, rgba(251,250,248,1) 100%);
+}
+#enlacePrincipal,#enlaceSecundario{
+    color: #fbfaf8;
+    margin-left: 2em;
+    margin-top: 1em;
+}
