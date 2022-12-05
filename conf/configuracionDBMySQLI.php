@@ -8,10 +8,10 @@
  * constantes con valores para conexión a base de datos
  */
 //Conexión en curso.
-define('EQUIPO', '192.168.1.77');
-define('USUARIO', 'usuarioDAW208DBDepartamentos');
-define('PASSWORD', 'paso');
-define('BASEDEDATOS', 'DAW208DBDepartamentos');
+define('EQUIPO', 'db5010845912.hosting-data.io');
+define('USUARIO', 'dbu1353928');
+define('PASSWORD', 'daw2_Sauces');
+define('BASEDEDATOS', 'dbs9174079');
 /*
  * Declaración de variables e inicialización con los valores correctos 
  * para entorno de desarrollo virtualizado Ubuntu server en casa.
@@ -23,7 +23,7 @@ define('BASEDEDATOS', 'DAW208DBDepartamentos');
 /*
  * Declaración de variables e inicialización con los valores correctos 
  * para entorno de desarrollo virtualizado Ubuntu server en clase.
- * define('EQUIPO', '92.168.3.207');
+ * define('EQUIPO', '192.168.3.207');
  * define('USUARIO', 'usuarioDAW208DBDepartamentos');
  * define('PASSWORD', 'paso');
  * define('BASEDEDATOS', 'DAW208DBDepartamentos');
@@ -39,7 +39,7 @@ define('BASEDEDATOS', 'DAW208DBDepartamentos');
 /*
  * Declaración de variables e inicialización con los valores correctos 
  * para entorno de desarrollo virtualizado 1&1.
- * define('EQUIPO', db5010845912.hosting-data.io');
+ * define('EQUIPO', 'db5010845912.hosting-data.io');
  * define('USUARIO', 'dbu1353928');
  * define('PASSWORD', 'daw2_Sauces');
  * define('BASEDEDATOS', 'dbs9174079');
