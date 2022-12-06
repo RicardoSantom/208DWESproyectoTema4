@@ -8,10 +8,10 @@
  * constantes con valores para conexión a base de datos
  */
 //Conexión en curso.
-define('EQUIPO', 'db5010845912.hosting-data.io');
-define('USUARIO', 'dbu1353928');
-define('PASSWORD', 'daw2_Sauces');
-define('BASEDEDATOS', 'dbs9174079');
+define('EQUIPO', 'daw208.sauces.local');
+define('USUARIO', 'usuarioDAW208DBDepartamentos');
+define('PASSWORD', 'paso');
+define('BASEDEDATOS', 'DAW208DBDepartamentos');
 /*
  * Declaración de variables e inicialización con los valores correctos 
  * para entorno de desarrollo virtualizado Ubuntu server en casa.
@@ -31,7 +31,7 @@ define('BASEDEDATOS', 'dbs9174079');
 /*
  * Declaración de variables e inicialización con los valores correctos 
  * para entorno de desarrollo sauces.local.
- * define('EQUIPO', '192.168.20.19');
+ * define('EQUIPO', 'daw208.sauces.local');
  * define('USUARIO', 'usuarioDAW208DBDepartamentos');
  * define('PASSWORD', 'paso');
  * define('BASEDEDATOS', 'DAW208DBDepartamentos');

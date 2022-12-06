@@ -63,7 +63,7 @@
                         printf('%s', $miDB->getAttribute(constant("PDO::ATTR_$valor")));
                         echo '</td></tr>';
                     }
-                    echo '</tbody></table>';
+                    echo '</tbody></table><br>';
                     printf('%sLos atributos %s y %s dan error de compatibilidad de driver:%s', '<p>', 'TIMEOUT', 'PREFETCH', '</p>');
                     //Si todo a ido bien:
                     //Informo del éxito de la conexíón
