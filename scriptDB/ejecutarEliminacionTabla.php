@@ -21,15 +21,14 @@
             <article>
                 <h3>eliminación de tablas en DB DAW208DBDepartamentos</h3>
                 <?php
-                try {
-                    //Requerimiento de archivo con constantes para la conexión a base de datos.
+                 //Requerimiento de archivo con constantes para la conexión a base de datos.
                     require_once '../conf/configuracionDB.php';
+                try {
+                   
                     // Construcción conexión a base de datos como objeto pasándole las constantes predefinidas.
                     $DAW208DBDepartamentos = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
                     //consulta de inserción
-                    $sConsultaSqlEliminacion = <<<ELIMINACION
-                             drop table if exists T02_Departamento;
-                            ELIMINACION;
+                    $sConsultaSqlEliminacion ="DROP TABLE IF EXISTS T02_Departamento";
                     //Comienzo de la transaccion.
                     $DAW208DBDepartamentos->beginTransaction();
                     //Ejecución consulta de creación.

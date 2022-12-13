@@ -10,31 +10,22 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" sizes="96x96" href="../../webroot/images/favicon-96x96.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>Ejercicios Proyecto Tema 4</title>
+        <title>Mostrar Fichero Configuración DB</title>
     </head>
     <body>
         <header>
-            <h1>Ejercicios Proyecto Tema 4</h1>
-            <h2>Script creación DAW208DAWDBDepartamentos.sql</h2>
+            <h1>Librerías Proyecto Tema 4</h1>
+            <h2>Mostrar Fichero Configuración DB</h2>
         </header>
         <main>
             <article>
-                <h3>Enunciado: Mostrar script creación DAW208DAWDBDepartamentos.sql</h3>
-                <?php
-                /**
-                 * @author Ricardo Santiago Tomé
-                 * @version 1.0
-                 * @since 04/11/2022
-                 */
-                echo '<h4 style="color:orange">CreaDAW208DBDeparamentos.sql.php</h4>';
-                //Imprime como texto por pantalla el contenido del archivo referenciado.
-                echo highlight_file("../scriptDB/CreaDAW208DBDepartamentos.sql");
-                ?>
+                <h3>Código fichero Configuración Base de Datos.</h3>
+                    <?php highlight_file("../conf/confDB1and1.php") ?>
             </article>
         </main>
         <footer>
             <p>2022-23  IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
-            <a href="https://github.com/RicardoSantom/208DWESproyectoTema4" target="blank" id="github" title="RicardoSantom en GitHub">
+            <a href="https://github.com/RicardoSantom/208DWESproyectoTema4" target="blank"  class="enlaces" id="github" title="RicardoSantom en GitHub">
             </a>
             <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim" target="_blank"></a>
             <a href="../../doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>

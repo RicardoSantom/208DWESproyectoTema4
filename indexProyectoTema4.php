@@ -34,28 +34,28 @@
                 <tbody>
                     <tr>
                         <td><span>scripts.~ </span>Borrado DB.</td>
-                        <td><a href="mostrarcodigo/mostrarBorraDAW208DBDepartamentos.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/BorraDAW208DBDepartamentos.php">Mostrar</a></td>
                         <td><a href="mostrarcodigo/mostrarEjecutarEliminacionTabla.php">Mostrar</a></td>
-                        <td><a href="mostrarcodigo/mostrarBorraDAW208DBDepartamentos.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/BorraDAW208DBDepartamentos.php">Mostrar</a></td>
                     </tr>
                     <tr>
                         <td><span>scripts.~ </span>Creación DB.</td>
-                        <td><a href="mostrarcodigo/mostrarCreaDAW208DBDepartamentos.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/CreaDAW208DBDepartamentos.php">Mostrar</a></td>
                         <td><a href="mostrarcodigo/mostrarEjecutarCreacionTabla.php">Mostrar</a></td>
-                        <td><a href="mostrarcodigo/mostrarCreaDAW208DBDepartamentos.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/CreaDAW208DBDepartamentos.php">Mostrar</a></td>
                     </tr>
                     <tr>
                         <td><span>scripts.~ </span>Carga inicial DB.</td>
-                        <td><a href="mostrarcodigo/mostrarCargaInicialDAW208DBDepartamentos.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/CargaInicialDAW208DBDepartamentos.php">Mostrar</a></td>
                         <td><a href="mostrarcodigo/mostrarEjecutarCargaInicialTabla.php">Mostrar</a></td>
-                        <td><a href="mostrarcodigo/mostrarCargaInicialDAW208DBDepartamentos.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/CargaInicialDAW208DBDepartamentos.php">Mostrar</a></td>
                     </tr>
                      <tr><th colspan="4"><h3>FICHERO CONFIGURACIÓN</h3></th></tr>
                     <tr>
                         <td><span>Configuración.~ </span>Conexión DB</td>
-                        <td><a href="mostrarcodigo/mostrarConfDBSaucesLocal.php">Mostrar</a></td>
-                        <td><a href="mostrarcodigo/mostrarConfDB1and1.php">Mostrar</a></td>
-                        <td><a href="mostrarcodigo/mostrarConfDBUbuntuCasa.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/mostrarConfiguracionDBSaucesLocal.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/mostrarConfiguracionDB1and1.php">Mostrar</a></td>
+                        <td><a href="mostrarcodigo/mostrarConfiguracionDBUbuntuCasa.php">Mostrar</a></td>
                     </tr>
                     <tr><th colspan="4"><h3>LIBRERÍAS</h3></th></tr>
                     <tr>

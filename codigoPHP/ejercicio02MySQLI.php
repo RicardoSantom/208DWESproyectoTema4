@@ -38,21 +38,30 @@
                     //Carga de una fila (de manera anticipada) sobre la variable "registroObjeto"
                     $registroObjeto = $consultaSQLDeSeleccion->fetch_object();
                     //Mostrado del número de registros
-                    echo "<h1>" . $consultaSQLDeSeleccion->num_rows . " registros</h1>";
+                    printf("<h5>Número de registros: %s</h5><br>", $consultaSQLDeSeleccion->num_rows);
                     //Creación de la tabla para mostrar los datos
                     echo "<table><thead><tr><th>T02_CodDepartamento</th><th>T02_DescDepartamento</th><th>T02_FechaCreacionDepartamento</th>"
                     . "<th>T02_VolumenNegocio</th><th>T02_FechaBajaDepartamento</th></thead>";
                     //Bucle para ir cargando cada fila
                     while ($registroObjeto != null) {
                         echo "<tr>";
+                        //variable para devolver timestamp en formato fecha
+                        $oFechaTimesTamp = new DateTime();
+                        //Guardo en ella el timestamp que devuelve el objeto en su iteración gracias a fetch_object()
+                        $oFechaTimesTamp->setTimestamp($registroObjeto->T02_FechaCreacionDepartamento);
+                        //Y lo guardo en una variable de tipo cadena par poder mostrarlo.
+                        $sFechaFormateada=$oFechaTimesTamp->format('d/m/Y H:i:s T');
                         //Recorrido de la fila cargada
                         foreach ($registroObjeto as $clave => $valor) {
-                            if($valor!=null){
-                                echo "<td>$valor</td>";
-                            } else{
+                            if ($valor != null) {
+                                if ($clave == 'T02_FechaCreacionDepartamento') {
+                                    echo "<td>$sFechaFormateada</td>";
+                                } else {
+                                    echo "<td>$valor</td>";
+                                }
+                            } else {
                                 echo"<td>null</td>";
                             }
-                                                       
                         }
                         echo "</tr>";
                         //Carga de una nueva fila al final del bucle
@@ -64,7 +73,7 @@
                     echo 'Error: ' . $excepcion->getMessage();
                 } finally {
                     //Haya ido todo bien o mal, acabo con un cerrado de la base de datos.
-                     $miDB->close();
+                    $miDB->close();
                 }
                 ?>
             </article>

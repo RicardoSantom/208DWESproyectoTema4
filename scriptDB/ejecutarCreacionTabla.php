@@ -21,37 +21,40 @@
             <article>
                 <h3>Creación de tablas en DB DAW208DBDepartamentos</h3>
                 <?php
+                //Requerimiento de archivo con constantes para la conexión a base de datos.
+                require_once '../conf/configuracionDB.php';
                 try {
-                    //Requerimiento de archivo con constantes para la conexión a base de datos.
-                    require_once '../conf/configuracionDB.php';
                     // Construcción conexión a base de datos como objeto pasándole las constantes predefinidas.
                     $DAW208DBDepartamentos = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
-                    //consulta de inserción
-                    $sConsultaSqlCreacion = <<<CREACION
-                            USE DAW208DBDepartamentos;
-                            CREATE TABLE T02_Departamento(T02_CodDepartamento char(3) primary key,
+                    $sConsultaSqlCreacion = $DAW208DBDepartamentos->prepare(<<<CREACION
+                            CREATE TABLE IF NOT EXISTS T02_Departamento(T02_CodDepartamento char(3) primary key,
                                 T02_DescDepartamento varchar(255) not null, 
                                 T02_FechaCreacionDepartamento int not null,
                                 T02_VolumenNegocio float not null,
                                 T02_FechaBajaDepartamento int null
                                 )engine=Innodb;
-                            CREACION;
+                            CREACION);
                     //Comienzo de la transaccion.
                     $DAW208DBDepartamentos->beginTransaction();
-                    //Ejecución consulta de creación.
-                    $DAW208DBDepartamentos->exec($sConsultaSqlCreacion);
                     //Si la ejecución no da error, hace commit del query de inserción.
                     $DAW208DBDepartamentos->commit();
-                    echo "<h3>Insercion ejecutada con exito</<h3>";
-                    $resultadoDepartamentos = $miDB->query("select * from T02_Departamento");
-                } catch (PDOException $excepcion) {
-                    //Si se detecta aunque solo se aun error, vuelve al estado anterior al beginTransaction.
+                    $sConsultaSqlCreacion->execute(); //Ejecuto la consulta
+                    if ($sConsultaSqlCreacion) {
+                        echo "<h3>Creacion ejecutada con exito</<h3>";
+                        $resultadoDepartamentos = $miDB->query("select * from T02_Departamento");
+                    }
+                } catch (PDOException $excepcion) { //Código que se ejecutará si se produce alguna excepción
+                    ////Si se detecta aunque solo se aun error, vuelve al estado anterior al beginTransaction.
                     $DAW208DBDepartamentos->rollBack();
-                    //Si no ha funcionado, impresión de los errores ocurridos
-                    echo 'Error: ' . $excepcion->getMessage();
-                    echo'Código de error: ' . $excepcion->getCode();
+                    //Almacenamos el código del error de la excepción en la variable $errorExcepcion
+                    $errorExcep = $excepcion->getCode();
+                    //Almacenamos el mensaje de la excepción en la variable $mensajeExcep
+                    $mensajeExcep = $excepcion->getMessage();
+
+                    echo "<span style='color: red;'>Error: </span>" . $mensajeExcep . "<br>"; //Mostramos el mensaje de la excepción
+                    echo "<span style='color: red;'>Código del error: </span>" . $errorExcep; //Mostramos el código de la excepción
                 } finally {
-                    //Haya ido todo bien o mal, acabo con un cerrado de la base de datos.
+                    // Cierre de la conexión.
                     unset($DAW208DBDepartamentos);
                 }
                 ?>
