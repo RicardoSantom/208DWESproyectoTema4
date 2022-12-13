@@ -10,43 +10,39 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" sizes="96x96" href="../../webroot/images/favicon-96x96.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>Ejecutar script eliminacion tabla</title>
+        <title>Ejecutar script insercion datos en tabla DAW208DBDepartamento</title>
     </head>
     <body>
         <header>
             <h1>Eliminacion tabla T02_DEpartamentos Tema 4</h1>
-            <h2>Ejecutar script eliminacion tabla</h2>
+            <h2>Ejecutar script insercion datos en tabla</h2>
         </header>
         <main>
             <article>
-                <h3>eliminación de tablas en DB DAW208DBDepartamentos</h3>
+                <h3>Inserción de datos en tabla T02_Departamentos DAW208DBDepartamentos</h3>
                 <?php
+                //Requerimiento de archivo con constantes para la conexión a base de datos.
+                require_once '../conf/configuracionDB.php';
                 try {
-                    //Requerimiento de archivo con constantes para la conexión a base de datos.
-                    require_once '../conf/configuracionDB.php';
                     // Construcción conexión a base de datos como objeto pasándole las constantes predefinidas.
                     $DAW208DBDepartamentos = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
-                    //consulta de inserción
-                    $sConsultaSqlInsercion = <<<INSERCION
-insert into T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio) 
-values("DAW","Despliegue Aplcaciones Web",1668384061,2000);
-insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio) 
-values("DWC","Desarrollo Web Entorno Cliente",1668384061,1000);
-insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio)
- values("DWS","Desarrollo Web Entorno Servidor",1668384061,3000);
-insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio)
- values("DIW","Diseño Interfaces Web",1668384061,4000);
-insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio)
- values("EIE","Empresa e Iniciativa Emprendedora",1668384061,2);
-                            INSERCION;
                     //Comienzo de la transaccion.
                     $DAW208DBDepartamentos->beginTransaction();
+                    //consulta de inserción
+                    $sConsultaSqlInsercion = $DAW208DBDepartamentos->prepare(<<<INSERCION
+                            insert into T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio) 
+                            values("DAW","Despliegue Aplcaciones Web",1668384061,2000),
+                            ("DWC","Desarrollo Web Entorno Cliente",1668384061,1000),
+                            ("DWS","Desarrollo Web Entorno Servidor",1668384061,3000),
+                            ("DIW","Diseño Interfaces Web",1668384061,4000),
+                            ("EIE","Empresa e Iniciativa Emprendedora",1668384061,2);
+                            INSERCION);
                     //Ejecución consulta de creación.
-                    $DAW208DBDepartamentos->exec($sConsultaSqlInsercion);
+                    $sConsultaSqlInsercion->execute();
                     //Si la ejecución no da error, hace commit del query de inserción.
                     $DAW208DBDepartamentos->commit();
                     echo "<h3>Insercion ejecutada con exito</<h3>";
-                    $resultadoDepartamentos = $miDB->query("select * from T02_Departamento");
+                    $DAW208DBDepartamentos = $miDB->query("select * from T02_Departamento");
                 } catch (PDOException $excepcion) {
                     //Si se detecta aunque solo se aun error, vuelve al estado anterior al beginTransaction.
                     $DAW208DBDepartamentos->rollBack();

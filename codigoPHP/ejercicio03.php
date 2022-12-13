@@ -118,12 +118,18 @@
             <article>
                 <h3>Alta de departamento</h3>
                 <?php
+                /**
+                 * @author Ricardo Santiago Tomé RicardoSantom en Github <https://github.com/RicardoSantom>
+                 * @since noviembre/2022 ültima revisión 13/12/2022
+                 * @version 2.0
+                 * Formulario para añadir un departamento a la tabla Departamento con validación de entrada y control de errores
+                 */
                 //Incluir libreria de validacion
                 require_once '../core/validacionFormularios.php';
-                //Declaración de constantes e inicialización con los valores correctos para ubuntu server casa
-                define('DSN', 'mysql:host=192.168.20.19;dbname=DAW208DBDepartamentos');
-                define('NOMBREUSUARIO', 'usuarioDAW208DBDepartamentos');
-                define('PASSWORD', 'paso');
+                //Inclusión fichero configuración constantes base de datos.
+                require_once '../conf/configuracionDB.php';
+                // Construcción de conexión a base de datos como objeto pasándole los atributos anteriormente inicializados.
+                $DAW208DBDepartamentos = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
                 /*
                  * La siguiente variable comprueba si se han producido errores o no,
                  * la inicializo a true, este valor cambiará en caso de que haya errores.
@@ -276,7 +282,12 @@
                     $enteroFechaInsertada = date_timestamp_get($oFechaCreacionDepartamento);
                     echo "<table><tbody><caption>Tabla de datos</caption><tr>";
                     foreach ($aRespuestas as $clave => $valor) {
-                        printf('<td>%s</td><td>%s %s', $clave, $valor, '</td>');
+                        if($clave!='T02_FechaBajaDepartamento'){
+                            printf('<td>%s</td><td>%s %s', $clave, $valor, '</td>');
+                        } else {
+                            printf('<td>%s</td><td> %s', $clave,'null</td>');
+                        }
+                        
                         echo "</tr>";
                     }
                     echo "</tbody></table>";
@@ -327,8 +338,11 @@
                                     echo "<td>" . $fechaFormateada . "</td>";
                                     //Conversión de timestamp a fecha para mostrar resultado en tabla y guardar el valor como entero en BD
                                 } else {
-
-                                    echo "<td>$valor</td>";
+                                    if($clave != 'T02_FechaBajaDepartamento'){
+                                        echo "<td>$valor</td>";
+                                    } else {
+                                    echo "<td>null</td>";
+                                    }
                                 }
                             }
                             echo "</tr>";
@@ -383,7 +397,7 @@
                             </div>
                         </fieldset>
                     </form>
-                    <?php } ?>
+                <?php } ?>
             </article>
         </main>
         <footer>

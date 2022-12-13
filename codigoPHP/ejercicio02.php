@@ -52,15 +52,22 @@
                     . "<th>T02_VolumenNegocio</th><th>T02_FechaBajaDepartamento</th></tr></thead><tbody>";
                     while ($registroObjeto != null) {
                         echo "<tr>";
+                        //variable para devolver timestamp en formato fecha
+                        $oFechaTimesTamp = new DateTime();
+                        //Guardo en ella el timestamp que devuelve el objeto en su iteración gracias a fetch_object()
+                        $oFechaTimesTamp->setTimestamp($registroObjeto->T02_FechaCreacionDepartamento);
+                        //Y lo guardo en una variable de tipo cadena par poder mostrarlo.
+                        $sFechaFormateada = $oFechaTimesTamp->format('d/m/Y H:i:s T');
                         //Recorrido de la fila cargada
                         foreach ($registroObjeto as $clave => $valor) {
-                            if ($clave == 'T02_FechaCreacionDepartamento') {
-                                $oFechaDevuelta->setTimestamp($valor);
-                                $fechaFormateada = $oFechaDevuelta->format('d-m-Y');
-                                echo "<td>" . $fechaFormateada . "</td>";
-                                //Conversión de timestamp a fecha para mostrar resultado en tabla y guardar el valor como entero en BD
+                            if ($valor != null) {
+                                if ($clave == 'T02_FechaCreacionDepartamento') {
+                                    echo "<td>$sFechaFormateada</td>";
+                                } else {
+                                    echo "<td>$valor</td>";
+                                }
                             } else {
-                                echo "<td>$valor</td>";
+                                echo"<td>null</td>";
                             }
                         }
                         echo "</tr>";

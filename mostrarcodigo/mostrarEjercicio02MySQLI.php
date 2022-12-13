@@ -10,31 +10,22 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" sizes="96x96" href="../../webroot/images/favicon-96x96.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>Ejercicio 01 PDO Tema4</title>
-        <!-- Última actualización 13/11/2022 -->
+        <title>Mostrar ejercicio 02 MySQLI</title>
     </head>
     <body>
         <header>
             <h1>Ejercicios Proyecto Tema 4</h1>
-            <h2>Ejercicio 01.php</h2>
+            <h2>Ejercicio 02.php</h2>
         </header>
         <main>
             <article>
                 <h3>Enunciado: Conexión a la base de datos con la cuenta usuario y tratamiento de errores</h3>
-                <?php
-                try {
-                    require_once '../conf/configuracionDB.php';
-                $DAW208DBDepartamentos = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
-                } catch (PDOException $e) {
-                    echo "Error!:" . $e->getMessage() . "<br/>";
-                    die();
-                }
-                ?>
+                <?php highlight_file("../codigoPHP/ejercicio02MySQLI.php") ?>
             </article>
         </main>
         <footer>
             <p>2022-23  IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
-            <a href="https://github.com/RicardoSantom" target="blank" id="github" title="RicardoSantom en GitHub">
+            <a href="https://github.com/RicardoSantom/208DWESproyectoTema4" target="blank"  class="enlaces" id="github" title="RicardoSantom en GitHub">
             </a>
             <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim" target="_blank"></a>
             <a href="../../doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
@@ -42,16 +33,4 @@
         </footer>
     </body>
 </html>
-<?php
-$host_name = 'db5010845754.hosting-data.io';
-$database = 'dbs9173955';
-$user_name = 'dbu2895102';
-$password = '<Introduzca aquí su contraseña.>';
-$dbh = null;
-try {
-    $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
-} catch (PDOException $e) {
-    echo "Error!:" . $e->getMessage() . "<br/>";
-    die();
-}
-?>
+
