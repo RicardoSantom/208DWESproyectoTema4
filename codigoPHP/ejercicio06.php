@@ -132,8 +132,8 @@
                         //por lo tanto, no efectúa ningúna inserción en la tabla a menos que pueda realizarlas todas correctamente.
                         $DAW208DBDepartamentos->rollBack();
                         //Si no ha funcionado, impresión de los errores ocurridos
-                        echo 'Error: ' . $excepcion->getMessage();
-                        echo'Código de error: ' . $excepcion->getCode();
+                         echo '<h5>Ha saltado una excepción: </h5><p>' . $excepcion->getMessage().'<p>';
+                        echo'<h5>Código de error: </h5><p>' . $excepcion->getCode().'</p>';
                     } finally {
                         //Haya ido todo bien o mal, acabo con un cerrado de la base de datos.
                         unset($DAW208DBDepartamentos);
